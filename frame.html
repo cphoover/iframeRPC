@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+<style>
+	body {
+		background: lightPink;
+	}
+</style>
+</head>
+<body>
+	I am the child frame domain #2
+	<script src="./iframeRPC.js"></script>
+	<script>
+
+		var client = iframeRPC.createClient('http://505a75cc.ngrok.io');
+
+		client('getPrice', 1234, function (err, price) {
+			alert('price:' + price);
+		});
+
+		client('sum', [1,2,3,4], function (err, total) {
+			alert('total:' + total);
+		});
+
+	</script>
+</body>
+</html>

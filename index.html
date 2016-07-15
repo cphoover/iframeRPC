@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+<style>
+	body {
+		background: lightBlue;
+	}
+</style>
+</head>
+<body>
+	I am a top level domain!!
+	<iframe src="http://6619b53a.ngrok.io/frame.html" name="mtoc"></iframe>
+
+	<script src="./iframeRPC.js"></script>
+	<script>
+
+		var services = {
+			'getPrice': function(input, done) {
+				return done(null, 143.29);
+			},
+			'sum': function (nums, done) {
+				return done(null, nums.reduce(function (acc, cur) {
+					return acc + cur;
+				}));
+			}
+		};
+
+	iframeRPC.createService(services, 'http://6619b53a.ngrok.io', window.frames.mtoc);
+
+</script>
+
+</body>
+</html>
