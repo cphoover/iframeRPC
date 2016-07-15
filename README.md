@@ -18,7 +18,7 @@ var services = {
 	}
 };
 
-iframeRPC.createService(services, 'http://6619b53a.ngrok.io', window.frames.mtoc);
+iframeRPC.createService(services, '[CHILD DOMAIN]', window.frames.mtoc);
 ```
 
 
